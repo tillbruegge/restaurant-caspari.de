@@ -1,12 +1,14 @@
 content:
-  - name: "htmlpages"
+  - name: htmlpages
     label: "HTML Pages"
-    type: "collection"
-    path: "restaurant-caspari.de/de/*.html"
-    parser: "html"  # Specify the parser explicitly
+    type: collection
+    path: "restaurant-caspari.de/de"
+    format: code                           # use the “code” editor [2]
+    subfolders: false
     fields:
-      - name: "body"
-        label: "Content"
-        type: "markdown"  # Try changing from "code" to "markdown"
-        parser: "html"    # Explicitly set parser for this field
-
+      - name: content
+        label: "HTML source"
+        type: code
+        parser: html                       # tells Pages CMS to treat this as HTML [2]
+        options:
+          language: html                   # editor syntax highlighting
