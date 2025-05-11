@@ -3,7 +3,6 @@ content:
   - name: htmlpages
     label: "HTML Pages"
     type: collection
-    path: "de"                       # folder in your repo
-    format: raw                      # or "code" if you want syntax highlighting
-    subfolders: false                # only this folder
-    file_extensions: ["html"]        # MUST include html or none of your .html files will appear
+    path: "de"
+    format: raw
+    extensions: ["html"]
