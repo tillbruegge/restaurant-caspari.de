@@ -3,7 +3,7 @@
 # Optional: Configure the media folder if your HTML files reference images or other assets.
 # Replace "img" with the actual path to your media assets folder (e.g., "files", "assets/images").
 media:
-   path: "files" # This is the folder where Pages CMS will look for and save media files.
+   path: files # This is the folder where Pages CMS will look for and save media files.
 
 content:
   # Configuration for the HTML files inside the 'de' folder
