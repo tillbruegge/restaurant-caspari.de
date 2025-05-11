@@ -1,17 +1,17 @@
 media: "files"  # Adjust to your media folder location
 
 content:
-  - name: "mainsite"
-    label: "Main Site Pages"
+  - name: "mainpages"
+    label: "Main Pages"
     type: "collection"
-    path: "restaurant-caspari.de/de/*.html"  # Target HTML files
-    view:
-      fields: ["title", "filename"]  # Show these fields in the admin list view
+    path: "restaurant-caspari.de/de/*.html"
+    fields: 
+      # Fields configuration as above
+
+  - name: "subpages"
+    label: "Sub Pages"
+    type: "collection"
+    path: "restaurant-caspari.de/de/*/*.html"  # For HTML files in subdirectories
     fields:
-      - name: "title"
-        label: "Page Title"
-        type: "string"
-      - name: "body"
-        label: "Page Content"
-        type: "code"
-        format: "html"
+      # Fields configuration
+
