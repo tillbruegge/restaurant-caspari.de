@@ -1,10 +1,12 @@
 media: "files"  # Adjust to your media folder location
 
 content:
-  - name: "pages"
-    label: "HTML Pages"
+  - name: "mainsite"
+    label: "Main Site Pages"
     type: "collection"
-    path: "restaurant-caspari.de/de"  # Path to your HTML files
+    path: "restaurant-caspari.de/de/*.html"  # Target HTML files
+    view:
+      fields: ["title", "filename"]  # Show these fields in the admin list view
     fields:
       - name: "title"
         label: "Page Title"
@@ -12,4 +14,4 @@ content:
       - name: "body"
         label: "Page Content"
         type: "code"
-        format: "html"  # Specifying HTML format
+        format: "html"
