@@ -1,0 +1,143 @@
+/* === START of IMAGE WRAPPER === */
+  .row.module_lightbox_gallery {
+    max-width: 97.5% !important;
+  }
+  .module_lightbox_gallery ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	}
+  .module_lightbox_gallery ul li {
+	float: left !important;
+	padding: 7px;
+	}
+/*   .img-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    width: 100%;
+  } */
+  .img-wrapper img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    -webkit-transition: all .7s linear;
+    -moz-transition: all .7s linear;
+    -o-transition: all .7s linear;
+    transition: all .7s linear;
+    overflow: hidden;
+  }
+  .img-wrapper a img { padding: 0; }
+  .img-wrapper a span {
+    width: 100%;
+    text-align: center;
+    display: block;
+    bottom: 0;
+    position: absolute;
+    padding: 5px;
+    background: rgba(136,22,24, .75);
+  }
+  .img-wrapper a, .img-wrapper:hover a {
+    color: #fff !important;
+    display: block;
+  }
+  .img-wrapper:hover img {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
+    overflow: hidden;
+    opacity: 1;
+  }
+  .module_lightbox_gallery {
+  	overflow: hidden;
+  	padding-bottom: 1.5em;
+  }
+  .module_lightbox_gallery ul li a {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	top: auto !important;
+	left: auto !important;
+  }
+  .module_lightbox_gallery ul li {
+	list-style: none;
+	height: 175px;
+	position: relative;
+	border: 0.5em solid transparent;
+  }
+  .module_lightbox_gallery ul li a img {
+	width: 100%;
+	padding: 0.5rem;
+	display: none;
+  }
+  #overlay {
+  	position: fixed;
+  }
+/* === END of IMAGE WRAPPER === */
+
+/* === START of GOOGLE MAP === */
+.gmap {
+  width: 100%;
+  height: 23rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.gmap .gmap-overlay {
+  background:transparent;
+  position: absolute;
+  width:100%;
+  height:100%;
+  top: 0;
+  bottom: 0;
+}
+.gmap iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
+/* === END of GOOGLE MAP === */
+
+/* === START of LANGUAGE SELECTION === */
+div.languages {
+  top: 10px;
+  right: 10px;
+}
+div.languages #languageActive img { border: 1px white solid; }
+/* === END of LANGUAGE SELEVTION === */
+
+/* === START of ERROR MELDUNGEN === */
+div.error-message {
+  padding: 2px 0 2px 26px;
+  background: url(../../../../img/icon/16/exclamation.gif) 4px 3px no-repeat;
+  font-weight: bold;
+  color: #e25f53;
+  width: 334px;
+  margin-left: 118px;
+}
+/* === END of ERROR MELDUNGEN === */
+
+/* === START of JQUERY PRELOADER === */
+
+#preloader {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:#fff; /* change if the mask should have another color then white */
+  z-index:99; /* makes sure it stays on top */
+}
+
+#status {
+  width:200px;
+  height:200px;
+  position:absolute;
+  left:50%; /* centers the loading animation horizontally one the screen */
+  top:50%; /* centers the loading animation vertically one the screen */
+  background-image:url("../img/loading_lightbox_gallery.gif"); /* path to your loading animation */
+  background-repeat:no-repeat;
+  background-position:center;
+  margin:-100px 0 0 -100px; /* is width and height divided by two */
+}
+  /* === END of JQUERY PRELOADER === */

@@ -1,0 +1,680 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html lang="de" xmlns="http://www.w3.org/1999/xhtml">
+      
+<!-- Mirrored from restaurant-caspari.de/de/157554-Datenschutz by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 05 May 2025 17:07:31 GMT -->
+<head>
+        <title>Datenschutz - Restaurant Caspari</title>
+		<script src="../2.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="../files/1902298/style/js/nw.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  	<link rel="stylesheet" type="text/css" href="../files/1902298/style/css/content.css" media="screen,print" />
+  	<link rel="stylesheet" type="text/css" href="../files/1902298/style/css/layout.css" media="screen" />
+	<script type="text/javascript" src="../js/lib/prototype.js"></script>
+	<script type="text/javascript" src="../js/src/scriptaculous.js"></script>
+	<script type="text/javascript" src="../js/frontend.js"></script>
+	<script type="text/javascript" src="../files/1902298/style/js/layout.js"></script>
+	<script type="text/javascript" src="../files/1902298/style/js/responsiveslides.min.js"></script>
+
+  	<meta name="language" content="de"/>
+  	<meta name="robots" content="index,follow,noodp"/>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<link rel="stylesheet" type="text/css" href="../files/1902298/style/css/foundation.css">
+<link rel="stylesheet" type="text/css" href="../files/1902298/style/css/imagelightbox.css">
+
+<link rel="stylesheet" type="text/css" href="../aaaa-cookie-neu/build/cookieconsent.min.css" />
+<script src="../aaaa-cookie/cookieconsent.min.js" data-cfasync="false"></script>
+
+
+    <script>
+        /**
+        * Functions for Google Analytics Opt-IN
+        * with Osano Cookie Consent (https://www.osano.com/cookieconsent/download/)
+        * v2.1 – 30.01.2021
+        * vektorkneter.de
+        *
+        *
+        * Changelog:
+        * v2.1 – 30.01.2021
+        * – some changes in clearCookie() wich might improve the reliability of
+        * cookie clearing in Google Chrome (based on a single issue report)
+        *
+        * v2.0 – 16.01.2021
+        * – added support for new tracking IDs with format G-XXXXXXXXXX
+        */
+         
+        // Google Analytics tracking ID
+        // You may use the old format UA-XXXXXXXX-X or the newer one G-XXXXXXXXXX
+        var $tracking_id = "#";
+         
+        // OPTIONAL (set if you have trouble deleting cookies):
+        // Set Google Analytics Cookie domain & path (needed for clearing cookies – have look in the inspector to get the values needed)
+        // If set to false, values from window.location.hostname and window.location.pathname will be used
+        var $tracking_cookie_domain = false; // eg. ".restaurant-caspari.de"
+        var $tracking_cookie_path = false;   // eg. "/"
+         
+         
+        // Insites Cookie Consent with Opt-IN for MATOMO tracking Cookie
+        // Source: https://cookieconsent.insites.com/documentation/disabling-cookies/
+        window.addEventListener("load", function () {
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#000"
+                    },
+                    "button": {
+                        "background": "#f1d600",
+                        "text":"#fff"
+                    }
+                },
+                "cookie": {
+                    "expiryDays": 1
+                 },
+        "position": "bottom-left",
+                "type": "opt-in",
+                "content": {
+                    "message": "Wir nutzen Cookies, um diese Website für Sie so interessant wie möglich zu gestalten. Sind Sie damit einverstanden?",
+                    "allow": "Alle Cookies",
+                    "deny": "Nur notwendige Cookies",
+                    "link": "Datenschutzerklärung",
+                    "href": "/de/157554-Datenschutz",
+                    "policy": 'Cookie Einstellungen'
+                },
+                onPopupOpen: function () {
+                    document.body.classList.add("cookieconsent-banner-opened");
+                },
+                onPopupClose: function () {
+                    document.body.classList.remove("cookieconsent-banner-opened");
+                },
+                onInitialise: function (status) {
+                    var type = this.options.type;
+                    var didConsent = this.hasConsented();
+                    if (type == 'opt-in' && didConsent) {
+                        // enable cookies
+                        embedTrackingCode();
+                    }
+                    if (type == 'opt-out' && !didConsent) {
+                        // disable cookies
+                        deleteGACookies();
+                    }
+                    if (type == 'opt-in' && !didConsent) {
+                        // disable cookies
+                        deleteGACookies();
+                    }
+                },
+                onStatusChange: function (status, chosenBefore) {
+                    var type = this.options.type;
+                    var didConsent = this.hasConsented();
+                    if (type == 'opt-in' && didConsent) {
+                        // enable cookies
+                        embedTrackingCode();
+                    }
+                    if (type == 'opt-in' && !didConsent) {
+                        // disable cookies
+                        deleteGACookies();
+                        location.reload();
+                    }
+                    if (type == 'opt-out' && !didConsent) {
+                        // disable cookies
+                        deleteGACookies();
+                        location.reload();
+                    }
+                },
+                onRevokeChoice: function () {
+                    var type = this.options.type;
+                    if (type == 'opt-in') {
+                        // disable cookies
+                         
+                    }
+                    if (type == 'opt-out') {
+                        // enable cookies
+                        embedTrackingCode();
+                    }
+                },
+         
+            })
+        });
+         
+         
+        /* –  – NO FUTHER SETTINGS NEEDED BELOW THIS LINE –  – */
+         
+        function embedTrackingCode(){
+            // add <script> to head
+            var gascript = document.createElement("script");
+            gascript.async = true;
+            gascript.src = "https://www.googletagmanager.com/gtag/js?id="+$tracking_id;
+            document.getElementsByTagName("head")[0].appendChild(gascript, document.getElementsByTagName("head")[0]);
+         
+            // track pageview
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', $tracking_id, { 'anonymize_ip': true });
+             
+            //console.log('Google Analytics Tracking enabled')
+        }
+         
+         
+        function deleteGACookies(){
+            // build cookie name from $tracking_id
+            // taking into account legacy format (UA-XXXXXXXX-X) and newer format (G-XXXXXXXXXX)
+            var $gtag_cookie;
+            if ($tracking_id.substring(0, 2) == "G-") {
+                // new format: Remove "G-", prefix with "_ga_"
+                //console.log('new tracking id');
+                $gtag_cookie = "_ga_"+$tracking_id.replace(/G-/g, "");
+            } else if ($tracking_id.substring(0, 3) == "UA-") {
+                // old format: Replace "-" with "_", prefix "_gat_gtag_"
+                //console.log('legacy tracking id');
+                $gtag_cookie = "_gat_gtag_"+$tracking_id.replace(/-/g, "_");
+            } else {
+                // none of the booth formats detected
+                console.warn('No valid tracking ID (UA-XXXXXXXX-X or G-XXXXXXXXXX) detected. Cookie deletion will not work!')
+            }
+             
+            // clear cookies
+            clearCookie('_ga',$tracking_cookie_domain,$tracking_cookie_path);
+            clearCookie('_gid',$tracking_cookie_domain,$tracking_cookie_path);
+            clearCookie('_gat',$tracking_cookie_domain,$tracking_cookie_path);
+            clearCookie($gtag_cookie,$tracking_cookie_domain,$tracking_cookie_path);
+         
+            //console.log('Google Analytics Tracking disabled')
+        }
+         
+         
+         
+         
+        // function for deleting Cookies (such as that ones from Google Analytics)
+        function clearCookie(name,domain,path){
+            if(!domain || domain==""){
+                domain = "." + window.location.hostname;
+            }
+            if(!path || path==""){
+                path = "../index.html";
+            }
+            document.cookie = name + '=; domain=' + domain +'; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=' + path;
+        }
+         
+         
+        // function for triggering a click on the cc-revoke button
+        // wich will show the consent banner again.
+        // You may use it in a link, such as this example:
+        // <a href="#" onclick="openCCbanner(); return false;">Cookie Consent</a>
+        function openCCbanner(){
+            var el = document.querySelector('.cc-revoke');
+            el.click();
+        }
+         
+         
+        // –  – OPTIONAL – -----------------
+        // Google Analytics Opt-Out Cookie
+        var $tracking_disable_cookie = 'ga-disable-' + $tracking_id;
+        if (document.cookie.indexOf($tracking_disable_cookie + '=true') > -1) {
+        window[$tracking_disable_cookie] = true;
+        }
+        function gaOptout() {
+            document.cookie = $tracking_disable_cookie + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+            window[$tracking_disable_cookie] = true;
+            alert("Der Opt-Out-Cookie für das Deaktivieren von Google Analytics wurde abgelegt.")
+        }
+         
+         
+        
+        </script>
+        <meta name="google-site-verification" content="VNfpjlebP2KziIIYCU5psWcHqY8o0z0cRkjB7BVCZoY" />
+  	<script type="text/javascript">
+//<![CDATA[
+var siteId = 1902298;
+//]]>
+</script>
+  	<meta name="keywords" content="Datenschutz"/>
+	<meta name="description" content=""/>
+  
+  	<link href="../files/1902298/style/img/favicon.ico" type="image/x-icon" rel="icon"/><link href="../files/1902298/style/img/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
+  </head>
+  <body class="frontend page_157554 lang_de">
+  
+  <div class="site_body page_157554 lang_de">
+  <div class="site">
+  <div class="site_inner">
+  
+  <div class="content" id="content">
+  <div class="content_inner" id="content_inner">
+  <div class="modul_extra" id="modul_extra">
+  <div class="module_textblock"><div class="row content-box">
+<div class="small-12 columns column-block">
+<h1>Datenschutzerkl&auml;rung</h1>
+</div>
+<div class="small-12 columns">
+<p>Personenbezogene Daten (nachfolgend zumeist nur &bdquo;Daten&ldquo; genannt) werden von uns nur im Rahmen der Erforderlichkeit sowie zum Zwecke der Bereitstellung eines funktionsf&auml;higen und nutzerfreundlichen Internetauftritts, inklusive seiner Inhalte und der dort angebotenen Leistungen, verarbeitet.</p>
+<p>Gem&auml;&szlig; Art. 4 Ziffer 1. der Verordnung (EU) 2016/679, also der Datenschutz-Grundverordnung (nachfolgend nur &bdquo;DSGVO&ldquo; genannt), gilt als &bdquo;Verarbeitung&ldquo; jeder mit oder ohne Hilfe automatisierter Verfahren ausgef&uuml;hrter Vorgang oder jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten, wie das Erheben, das Erfassen, die Organisation, das Ordnen, die Speicherung, die Anpassung oder Ver&auml;nderung, das Auslesen, das Abfragen, die Verwendung, die Offenlegung durch &Uuml;bermittlung, Verbreitung oder eine andere Form der Bereitstellung, den Abgleich oder die Verkn&uuml;pfung, die Einschr&auml;nkung, das L&ouml;schen oder die Vernichtung.</p>
+<p>Mit der nachfolgenden Datenschutzerkl&auml;rung informieren wir Sie insbesondere &uuml;ber Art, Umfang, Zweck, Dauer und Rechtsgrundlage der Verarbeitung personenbezogener Daten, soweit wir entweder allein oder gemeinsam mit anderen &uuml;ber die Zwecke und Mittel der Verarbeitung entscheiden. Zudem informieren wir Sie nachfolgend &uuml;ber die von uns zu Optimierungszwecken sowie zur Steigerung der Nutzungsqualit&auml;t eingesetzten Fremdkomponenten, soweit hierdurch Dritte Daten in wiederum eigener Verantwortung verarbeiten.</p>
+<p>Unsere Datenschutzerkl&auml;rung ist wie folgt gegliedert:</p>
+<p>I. Informationen &uuml;ber uns als Verantwortliche<br />II. Rechte der Nutzer und Betroffenen<br />III. Informationen zur Datenverarbeitung</p>
+<h2>I. Informationen &uuml;ber uns als Verantwortliche</h2>
+<p>Verantwortlicher Anbieter dieses Internetauftritts im datenschutzrechtlichen Sinne ist:</p>
+<p>Restaurant Caspari GmbH<br />Kirchenstra&szlig;e 6<br />21244 Buchholz<br />Deutschland</p>
+<p>Telefon: 04181 97374<br />E-Mail: info@restaurant-caspari.de</p>
+<h2>II. Rechte der Nutzer und Betroffenen</h2>
+<p>Mit Blick auf die nachfolgend noch n&auml;her beschriebene Datenverarbeitung haben die Nutzer und Betroffenen das Recht</p>
+<ul>
+<li>auf Best&auml;tigung, ob sie betreffende Daten verarbeitet werden, auf Auskunft &uuml;ber die verarbeiteten Daten, auf weitere Informationen &uuml;ber die Datenverarbeitung sowie auf Kopien der Daten (vgl. auch Art. 15 DSGVO);</li>
+<li>auf Berichtigung oder Vervollst&auml;ndigung unrichtiger bzw. unvollst&auml;ndiger Daten (vgl. auch Art. 16 DSGVO);</li>
+<li>auf unverz&uuml;gliche L&ouml;schung der sie betreffenden Daten (vgl. auch Art. 17 DSGVO), oder, alternativ, soweit eine weitere Verarbeitung gem&auml;&szlig; Art. 17 Abs. 3 DSGVO erforderlich ist, auf Einschr&auml;nkung der Verarbeitung nach Ma&szlig;gabe von Art. 18 DSGVO;</li>
+<li>auf Erhalt der sie betreffenden und von ihnen bereitgestellten Daten und auf &Uuml;bermittlung dieser Daten an andere Anbieter/Verantwortliche (vgl. auch Art. 20 DSGVO);</li>
+<li>auf Beschwerde gegen&uuml;ber der Aufsichtsbeh&ouml;rde, sofern sie der Ansicht sind, dass die sie betreffenden Daten durch den Anbieter unter Versto&szlig; gegen datenschutzrechtliche Bestimmungen verarbeitet werden (vgl. auch Art. 77 DSGVO).</li>
+</ul>
+<p>Dar&uuml;ber hinaus ist der Anbieter dazu verpflichtet, alle Empf&auml;nger, denen gegen&uuml;ber Daten durch den Anbieter offengelegt worden sind, &uuml;ber jedwede Berichtigung oder L&ouml;schung von Daten oder die Einschr&auml;nkung der Verarbeitung, die aufgrund der Artikel 16, 17 Abs. 1, 18 DSGVO erfolgt, zu unterrichten. Diese Verpflichtung besteht jedoch nicht, soweit diese Mitteilung unm&ouml;glich oder mit einem unverh&auml;ltnism&auml;&szlig;igen Aufwand verbunden ist. Unbeschadet dessen hat der Nutzer ein Recht auf Auskunft &uuml;ber diese Empf&auml;nger.</p>
+<p><strong>Ebenfalls haben die Nutzer und Betroffenen nach Art. 21 DSGVO das Recht auf Widerspruch gegen die k&uuml;nftige Verarbeitung der sie betreffenden Daten, sofern die Daten durch den Anbieter nach Ma&szlig;gabe von Art. 6 Abs. 1 lit. f) DSGVO verarbeitet werden. Insbesondere ist ein Widerspruch gegen die Datenverarbeitung zum Zwecke der Direktwerbung statthaft.</strong></p>
+<h2>III. Informationen zur Datenverarbeitung</h2>
+<p>Ihre bei Nutzung unseres Internetauftritts verarbeiteten Daten werden gel&ouml;scht oder gesperrt, sobald der Zweck der Speicherung entf&auml;llt, der L&ouml;schung der Daten keine gesetzlichen Aufbewahrungspflichten entgegenstehen und nachfolgend keine anderslautenden Angaben zu einzelnen Verarbeitungsverfahren gemacht werden.</p>
+<h3>Serverdaten</h3>
+<p>Aus technischen Gr&uuml;nden, insbesondere zur Gew&auml;hrleistung eines sicheren und stabilen Internetauftritts, werden Daten durch Ihren Internet-Browser an uns bzw. an unseren Webspace-Provider &uuml;bermittelt. Mit diesen sog. Server-Logfiles werden u.a. Typ und Version Ihres Internetbrowsers, das Betriebssystem, die Website, von der aus Sie auf unseren Internetauftritt gewechselt haben (Referrer URL), die Website(s) unseres Internetauftritts, die Sie besuchen, Datum und Uhrzeit des jeweiligen Zugriffs sowie die IP-Adresse des Internetanschlusses, von dem aus die Nutzung unseres Internetauftritts erfolgt, erhoben.</p>
+<p>Diese so erhobenen Daten werden vorr&uuml;bergehend gespeichert, dies jedoch nicht gemeinsam mit anderen Daten von Ihnen.</p>
+<p>Diese Speicherung erfolgt auf der Rechtsgrundlage von Art. 6 Abs. 1 lit. f) DSGVO. Unser berechtigtes Interesse liegt in der Verbesserung, Stabilit&auml;t, Funktionalit&auml;t und Sicherheit unseres Internetauftritts.</p>
+<p>Die Daten werden sp&auml;testens nach sieben Tage wieder gel&ouml;scht, soweit keine weitere Aufbewahrung zu Beweiszwecken erforderlich ist. Andernfalls sind die Daten bis zur endg&uuml;ltigen Kl&auml;rung eines Vorfalls ganz oder teilweise von der L&ouml;schung ausgenommen.</p>
+<h3>Cookies</h3>
+<h4>a) Sitzungs-Cookies/Session-Cookies</h4>
+<p>Wir verwenden mit unserem Internetauftritt sog. Cookies. Cookies sind kleine Textdateien oder andere Speichertechnologien, die durch den von Ihnen eingesetzten Internet-Browser auf Ihrem Endger&auml;t ablegt und gespeichert werden. Durch diese Cookies werden im individuellen Umfang bestimmte Informationen von Ihnen, wie beispielsweise Ihre Browser- oder Standortdaten oder Ihre IP-Adresse, verarbeitet. &nbsp;</p>
+<p>Durch diese Verarbeitung wird unser Internetauftritt benutzerfreundlicher, effektiver und sicherer, da die Verarbeitung bspw. die Wiedergabe unseres Internetauftritts in unterschiedlichen Sprachen oder das Angebot einer Warenkorbfunktion erm&ouml;glicht.</p>
+<p>Rechtsgrundlage dieser Verarbeitung ist Art. 6 Abs. 1 lit b.) DSGVO, sofern diese Cookies Daten zur Vertragsanbahnung oder Vertragsabwicklung verarbeitet werden.</p>
+<p>Falls die Verarbeitung nicht der Vertragsanbahnung oder Vertragsabwicklung dient, liegt unser berechtigtes Interesse in der Verbesserung der Funktionalit&auml;t unseres Internetauftritts. Rechtsgrundlage ist in dann Art. 6 Abs. 1 lit. f) DSGVO.</p>
+<p>Mit Schlie&szlig;en Ihres Internet-Browsers werden diese Session-Cookies gel&ouml;scht.</p>
+<h4>b) Drittanbieter-Cookies</h4>
+<p>Gegebenenfalls werden mit unserem Internetauftritt auch Cookies von Partnerunternehmen, mit denen wir zum Zwecke der Werbung, der Analyse oder der Funktionalit&auml;ten unseres Internetauftritts zusammenarbeiten, verwendet.</p>
+<p>Die Einzelheiten hierzu, insbesondere zu den Zwecken und den Rechtsgrundlagen der Verarbeitung solcher Drittanbieter-Cookies, entnehmen Sie bitte den nachfolgenden Informationen.</p>
+<h4>c) Beseitigungsm&ouml;glichkeit</h4>
+<p>Sie k&ouml;nnen die Installation der Cookies durch eine Einstellung Ihres Internet-Browsers verhindern oder einschr&auml;nken. Ebenfalls k&ouml;nnen Sie bereits gespeicherte Cookies jederzeit l&ouml;schen. Die hierf&uuml;r erforderlichen Schritte und Ma&szlig;nahmen h&auml;ngen jedoch von Ihrem konkret genutzten Internet-Browser ab. Bei Fragen benutzen Sie daher bitte die Hilfefunktion oder Dokumentation Ihres Internet-Browsers oder wenden sich an dessen Hersteller bzw. Support. Bei sog. Flash-Cookies kann die Verarbeitung allerdings nicht &uuml;ber die Einstellungen des Browsers unterbunden werden. Stattdessen m&uuml;ssen Sie insoweit die Einstellung Ihres Flash-Players &auml;ndern. Auch die hierf&uuml;r erforderlichen Schritte und Ma&szlig;nahmen h&auml;ngen von Ihrem konkret genutzten Flash-Player ab. Bei Fragen benutzen Sie daher bitte ebenso die Hilfefunktion oder Dokumentation Ihres Flash-Players oder wenden sich an den Hersteller bzw. Benutzer-Support.</p>
+<p>Sollten Sie die Installation der Cookies verhindern oder einschr&auml;nken, kann dies allerdings dazu f&uuml;hren, dass nicht s&auml;mtliche Funktionen unseres Internetauftritts vollumf&auml;nglich nutzbar sind.</p>
+<h3>Kontaktanfragen / Kontaktm&ouml;glichkeit</h3>
+<p>Sofern Sie per Kontaktformular oder E-Mail mit uns in Kontakt treten, werden die dabei von Ihnen angegebenen Daten zur Bearbeitung Ihrer Anfrage genutzt. Die Angabe der Daten ist zur Bearbeitung und Beantwortung Ihre Anfrage erforderlich - ohne deren Bereitstellung k&ouml;nnen wir Ihre Anfrage nicht oder allenfalls eingeschr&auml;nkt beantworten.</p>
+<p>Rechtsgrundlage f&uuml;r diese Verarbeitung ist Art. 6 Abs. 1 lit. b) DSGVO.</p>
+<p>Ihre Daten werden gel&ouml;scht, sofern Ihre Anfrage abschlie&szlig;end beantwortet worden ist und der L&ouml;schung keine gesetzlichen Aufbewahrungspflichten entgegenstehen, wie bspw. bei einer sich etwaig anschlie&szlig;enden Vertragsabwicklung.</p>
+<h3>Facebook</h3>
+<p>Zur Bewerbung unserer Produkte und Leistungen sowie zur Kommunikation mit Interessenten oder Kunden betreiben wir eine Firmenpr&auml;senz auf der Plattform Facebook.</p>
+<p>Auf dieser Social-Media-Plattform sind wir gemeinsam mit der Facebook Ireland Ltd., 4 Grand Canal Square, Grand Canal Harbour, Dublin 2 Ireland, verantwortlich.</p>
+<p>Der Datenschutzbeauftragte von Facebook kann &uuml;ber ein Kontaktformular erreicht werden:</p>
+<p><a href="https://www.facebook.com/help/contact/540977946302970" rel="noopener" target="_blank">https://www.facebook.com/help/contact/540977946302970</a></p>
+<p>Die gemeinsame Verantwortlichkeit haben wir in einer Vereinbarung bez&uuml;glich der jeweiligen Verpflichtungen im Sinne der DSGVO geregelt. Diese Vereinbarung, aus der sich die gegenseitigen Verpflichtungen ergeben, ist unter dem folgenden Link abrufbar:</p>
+<p><a href="https://www.facebook.com/legal/terms/page_controller_addendum" rel="noopener" target="_blank">https://www.facebook.com/legal/terms/page_controller_addendum</a></p>
+<p>Rechtsgrundlage f&uuml;r die dadurch erfolgende und nachfolgend wiedergegebene Verarbeitung von personenbezogenen Daten ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse besteht an der Analyse, der Kommunikation sowie dem Absatz und der Bewerbung unserer Produkte und Leistungen.</p>
+<p>Rechtsgrundlage kann auch eine Einwilligung des Nutzers gem&auml;&szlig; Art. 6 Abs. 1 lit. a DSGVO gegen&uuml;ber dem Plattformbetreiber sein. Die Einwilligung hierzu kann der Nutzer nach Art. 7 Abs. 3 DSGVO jederzeit durch eine Mitteilung an den Plattformbetreiber f&uuml;r die Zukunft widerrufen.</p>
+<p>Bei dem Aufruf unseres Onlineauftritts auf der Plattform Facebook werden von der Facebook Ireland Ltd. als Betreiberin der Plattform in der EU Daten des Nutzers (z.B. pers&ouml;nliche Informationen, IP-Adresse etc.) verarbeitet.</p>
+<p>Diese Daten des Nutzers dienen zu statistischen Informationen &uuml;ber die Inanspruchnahme unserer Firmenpr&auml;senz auf Facebook. Die Facebook Ireland Ltd. nutzt diese Daten zu Marktforschungs- und Werbezwecken sowie zur Erstellung von Profilen der Nutzer. Anhand dieser Profile ist es der Facebook Ireland Ltd. beispielsweise m&ouml;glich, die Nutzer innerhalb und au&szlig;erhalb von Facebook interessenbezogen zu bewerben. Ist der Nutzer zum Zeitpunkt des Aufrufes in seinem Account auf Facebook eingeloggt, kann die Facebook Ireland Ltd. zudem die Daten mit dem jeweiligen Nutzerkonto verkn&uuml;pfen.</p>
+<p>Im Falle einer Kontaktaufnahme des Nutzers &uuml;ber Facebook werden die bei dieser Gelegenheit eingegebenen personenbezogenen Daten des Nutzers zur Bearbeitung der Anfrage genutzt. Die Daten des Nutzers werden bei uns gel&ouml;scht, sofern die Anfrage des Nutzers abschlie&szlig;end beantwortet wurde und keine gesetzlichen Aufbewahrungspflichten, wie z.B. bei einer anschlie&szlig;enden Vertragsabwicklung, entgegenstehen.</p>
+<p>Zur Verarbeitung der Daten werden von der Facebook Ireland Ltd. ggf. auch Cookies gesetzt.</p>
+<p>Sollte der Nutzer mit dieser Verarbeitung nicht einverstanden sein, so besteht die M&ouml;glichkeit, die Installation der Cookies durch eine entsprechende Einstellung des Browsers zu verhindern. Bereits gespeicherte Cookies k&ouml;nnen ebenfalls jederzeit gel&ouml;scht werden. Die Einstellungen hierzu sind vom jeweiligen Browser abh&auml;ngig. Bei Flash-Cookies l&auml;sst sich die Verarbeitung nicht &uuml;ber die Einstellungen des Browsers unterbinden, sondern durch die entsprechende Einstellung des Flash-Players. Sollte der Nutzer die Installation der Cookies verhindern oder einschr&auml;nken, kann dies dazu f&uuml;hren, dass nicht s&auml;mtliche Funktionen von Facebook vollumf&auml;nglich nutzbar sind.</p>
+<p>N&auml;heres zu den Verarbeitungst&auml;tigkeiten, deren Unterbindung und zur L&ouml;schung der von Facebook verarbeiteten Daten finden sich in der Datenrichtlinie von Facebook:</p>
+<p><a href="https://www.facebook.com/privacy/explanation" rel="noopener" target="_blank">https://www.facebook.com/privacy/explanation</a></p>
+<p>Es ist nicht ausgeschlossen, dass die Verarbeitung durch die Facebook Ireland Ltd. auch &uuml;ber die Facebook Inc., 1601 Willow Road, Menlo Park, California 94025 in den USA erfolgt.</p>
+<h3>Instagram</h3>
+<p>Zur Bewerbung unserer Produkte und Leistungen sowie zur Kommunikation mit Interessenten oder Kunden betreiben wir eine Firmenpr&auml;senz auf der Plattform Instagram.</p>
+<p>Auf dieser Social-Media-Plattform sind wir gemeinsam mit der Facebook Ireland Ltd., 4 Grand Canal Square, Grand Canal Harbour, Dublin 2 Ireland, verantwortlich.</p>
+<p>Der Datenschutzbeauftragte von Instagram kann &uuml;ber ein Kontaktformular erreicht werden:</p>
+<p><a href="https://www.facebook.com/help/contact/540977946302970" rel="noopener" target="_blank">https://www.facebook.com/help/contact/540977946302970</a></p>
+<p>Die gemeinsame Verantwortlichkeit haben wir in einer Vereinbarung bez&uuml;glich der jeweiligen Verpflichtungen im Sinne der DSGVO geregelt. Diese Vereinbarung, aus der sich die gegenseitigen Verpflichtungen ergeben, ist unter dem folgenden Link abrufbar:</p>
+<p><a href="https://www.facebook.com/legal/terms/page_controller_addendum" rel="noopener" target="_blank">https://www.facebook.com/legal/terms/page_controller_addendum</a></p>
+<p>Rechtsgrundlage f&uuml;r die dadurch erfolgende und nachfolgend wiedergegebene Verarbeitung von personenbezogenen Daten ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse besteht an der Analyse, der Kommunikation sowie dem Absatz und der Bewerbung unserer Produkte und Leistungen.</p>
+<p>Rechtsgrundlage kann auch eine Einwilligung des Nutzers gem&auml;&szlig; Art. 6 Abs. 1 lit. a DSGVO gegen&uuml;ber dem Plattformbetreiber sein. Die Einwilligung hierzu kann der Nutzer nach Art. 7 Abs. 3 DSGVO jederzeit durch eine Mitteilung an den Plattformbetreiber f&uuml;r die Zukunft widerrufen.</p>
+<p>Bei dem Aufruf unseres Onlineauftritts auf der Plattform Instagram werden von der Facebook Ireland Ltd. als Betreiberin der Plattform in der EU Daten des Nutzers (z.B. pers&ouml;nliche Informationen, IP-Adresse etc.) verarbeitet.</p>
+<p>Diese Daten des Nutzers dienen zu statistischen Informationen &uuml;ber die Inanspruchnahme unserer Firmenpr&auml;senz auf Instagram. Die Facebook Ireland Ltd. nutzt diese Daten zu Marktforschungs- und Werbezwecken sowie zur Erstellung von Profilen der Nutzer. Anhand dieser Profile ist es der Facebook Ireland Ltd. beispielsweise m&ouml;glich, die Nutzer innerhalb und au&szlig;erhalb von Instagram interessenbezogen zu bewerben. Ist der Nutzer zum Zeitpunkt des Aufrufes in seinem Account auf Instagram eingeloggt, kann die Facebook Ireland Ltd. zudem die Daten mit dem jeweiligen Nutzerkonto verkn&uuml;pfen.</p>
+<p>Im Falle einer Kontaktaufnahme des Nutzers &uuml;ber Instagram werden die bei dieser Gelegenheit eingegebenen personenbezogenen Daten des Nutzers zur Bearbeitung der Anfrage genutzt. Die Daten des Nutzers werden bei uns gel&ouml;scht, sofern die Anfrage des Nutzers abschlie&szlig;end beantwortet wurde und keine gesetzlichen Aufbewahrungspflichten, wie z.B. bei einer anschlie&szlig;enden Vertragsabwicklung, entgegenstehen.</p>
+<p>Zur Verarbeitung der Daten werden von der Facebook Ireland Ltd. ggf. auch Cookies gesetzt.</p>
+<p>Sollte der Nutzer mit dieser Verarbeitung nicht einverstanden sein, so besteht die M&ouml;glichkeit, die Installation der Cookies durch eine entsprechende Einstellung des Browsers zu verhindern. Bereits gespeicherte Cookies k&ouml;nnen ebenfalls jederzeit gel&ouml;scht werden. Die Einstellungen hierzu sind vom jeweiligen Browser abh&auml;ngig. Bei Flash-Cookies l&auml;sst sich die Verarbeitung nicht &uuml;ber die Einstellungen des Browsers unterbinden, sondern durch die entsprechende Einstellung des Flash-Players. Sollte der Nutzer die Installation der Cookies verhindern oder einschr&auml;nken, kann dies dazu f&uuml;hren, dass nicht s&auml;mtliche Funktionen von Facebook vollumf&auml;nglich nutzbar sind.</p>
+<p>N&auml;heres zu den Verarbeitungst&auml;tigkeiten, deren Unterbindung und zur L&ouml;schung der von Instagram verarbeiteten Daten finden sich in der Datenrichtlinie von Instagram:</p>
+<p><a href="https://help.instagram.com/519522125107875" rel="noopener" target="_blank">https://help.instagram.com/519522125107875</a></p>
+<p>Es ist nicht ausgeschlossen, dass die Verarbeitung durch die Facebook Ireland Ltd. auch &uuml;ber die Facebook Inc., 1601 Willow Road, Menlo Park, California 94025 in den USA erfolgt.</p>
+<h2>Verlinkung Social-Media &uuml;ber Grafik oder Textlink</h2>
+<p>Wir bewerben auf unserer Webseite auch Pr&auml;senzen auf den nachstehend aufgef&uuml;hrten sozialen Netzwerken. Die Einbindung erfolgt dabei &uuml;ber eine verlinkte Grafik des jeweiligen Netzwerks. Durch den Einsatz dieser verlinkten Grafik wird verhindert, dass es bei dem Aufruf einer Website, die &uuml;ber eine Social-Media-Bewerbung verf&uuml;gt, automatisch zu einem Verbindungsaufbau zum jeweiligen Server des sozialen Netzwerks kommt, um eine Grafik des jeweiligen Netzwerkes selbst darzustellen. Erst durch einen Klick auf die entsprechende Grafik wird der Nutzer zu dem Dienst des jeweiligen sozialen Netzwerks weitergeleitet.</p>
+<p>Nach der Weiterleitung des Nutzers werden durch das jeweilige Netzwerk Informationen &uuml;ber den Nutzer erfasst. Es kann hierbei nicht ausgeschlossen werden, dass eine Verarbeitung der so erhobenen&nbsp; Daten in den USA stattfindet.</p>
+<p>Dies sind zun&auml;chst Daten wie IP-Adresse, Datum, Uhrzeit und besuchte Seite. Ist der Nutzer w&auml;hrenddessen in seinem Benutzerkonto des jeweiligen Netzwerks eingeloggt, kann der Netzwerk-Betreiber ggf. die gesammelten Informationen des konkreten Besuchs des Nutzers dem pers&ouml;nlichen Account des Nutzers zuordnen. Interagiert der Nutzer &uuml;ber einen &bdquo;Teilen&ldquo;-Button des jeweiligen Netzwerks, k&ouml;nnen diese Informationen in dem pers&ouml;nlichen Benutzerkonto des Nutzers gespeichert und ggf. ver&ouml;ffentlicht werden. Will der Nutzer verhindern, dass die gesammelten Informationen unmittelbar seinem Benutzerkonto zugeordnet werden, muss er sich vor dem Anklicken der Grafik ausloggen. Zudem besteht die M&ouml;glichkeit, das jeweilige Benutzerkonto entsprechend zu konfigurieren.</p>
+<p>Folgende soziale Netzwerke werden in unsere Seite durch Verlinkung eingebunden:</p>
+<h3>facebook</h3>
+<p>Facebook Ireland Limited, 4 Grand Canal Square, Dublin 2, Ireland, ein Tochterunternehmen der Facebook Inc., 1601 S. California Ave., Palo Alto, CA 94304, USA.</p>
+<p>Datenschutzerkl&auml;rung: <a href="https://www.facebook.com/policy.php" rel="noopener" target="_blank">https://www.facebook.com/policy.php</a></p>
+<h3>Instagram</h3>
+<p>Facebook Ireland Limited, 4 Grand Canal Square, Dublin 2, Ireland, ein Tochterunternehmen der Facebook Inc., 1601 S. California Ave., Palo Alto, CA 94304, USA.</p>
+<p>Datenschutzerkl&auml;rung: <a href="https://help.instagram.com/519522125107875" rel="noopener" target="_blank">https://help.instagram.com/519522125107875</a></p>
+<h3>Google-Maps</h3>
+<p>In unserem Internetauftritt setzen wir Google Maps zur Darstellung unseres Standorts sowie zur Erstellung einer Anfahrtsbeschreibung ein. Es handelt sich hierbei um einen Dienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland, nachfolgend nur &bdquo;Google&ldquo; genannt.</p>
+<p>Um die Darstellung bestimmter Schriften in unserem Internetauftritt zu erm&ouml;glichen, wird bei Aufruf unseres Internetauftritts eine Verbindung zu dem Google-Server in den USA aufgebaut.</p>
+<p>Sofern Sie die in unseren Internetauftritt eingebundene Komponente Google Maps aufrufen, speichert Google &uuml;ber Ihren Internet-Browser ein Cookie auf Ihrem Endger&auml;t. Um unseren Standort anzuzeigen und eine Anfahrtsbeschreibung zu erstellen, werden Ihre Nutzereinstellungen und -daten verarbeitet. Hierbei k&ouml;nnen wir nicht ausschlie&szlig;en, dass Google Server in den USA einsetzt.</p>
+<p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f) DSGVO. Unser berechtigtes Interesse liegt in der Optimierung der Funktionalit&auml;t unseres Internetauftritts.</p>
+<p>Durch die so hergestellte Verbindung zu Google kann Google ermitteln, von welcher Website Ihre Anfrage gesendet worden ist und an welche IP-Adresse die Anfahrtsbeschreibung zu &uuml;bermitteln ist.</p>
+<p>Sofern Sie mit dieser Verarbeitung nicht einverstanden sind, haben Sie die M&ouml;glichkeit, die Installation der Cookies durch die entsprechenden Einstellungen in Ihrem Internet-Browser zu verhindern. Einzelheiten hierzu finden Sie vorstehend unter dem Punkt &bdquo;Cookies&ldquo;.</p>
+<p>Zudem erfolgt die Nutzung von Google Maps sowie der &uuml;ber Google Maps erlangten Informationen nach den <a href="http://www.google.de/accounts/TOS" rel="noopener" target="_blank">Google-Nutzungsbedingungen</a>&nbsp;<a href="https://policies.google.com/terms?gl=DE&amp;hl=de" rel="noopener" target="_blank">https://policies.google.com/terms?gl=DE&amp;hl=de</a> und den <a href="https://www.google.com/intl/de_de/help/terms_maps.html" rel="noopener" target="_blank">Gesch&auml;ftsbedingungen f&uuml;r Google Maps</a> https://www.google.com/intl/de_de/help/terms_maps.html.</p>
+<p>&Uuml;berdies bietet Google unter</p>
+<p><a href="https://adssettings.google.com/authenticated" rel="noopener" target="_blank">https://adssettings.google.com/authenticated</a></p>
+<p><a href="https://policies.google.com/privacy" rel="noopener" target="_blank">https://policies.google.com/privacy</a></p>
+<p>weitergehende Informationen an.</p>
+<p><a href="https://www.ratgeberrecht.eu/leistungen/muster-datenschutzerklaerung.html" rel="noopener" target="_blank">Muster-Datenschutzerkl&auml;rung</a> der <a href="https://www.ratgeberrecht.eu/datenschutz/datenschutzerklaerung-generator-dsgvo.html" rel="noopener" target="_blank">Anwaltskanzlei Wei&szlig; &amp; Partner</a></p>
+</div>
+</div></div>
+  </div>
+  </div>
+  </div>
+  		
+  <div class="menu">	
+  <div class="menu_inner">
+  
+<ul class="main_menu " id="idPageList">
+<li class="page_157539" id="pageListElement_157539"><a class="main_menu" href="../index.html">Home</a></li>
+<li class="page_157549" id="pageListElement_157549"><a class="main_menu" href="157549-Speisekarte.html">Speisekarte</a></li>
+<li class="page_157551" id="pageListElement_157551"><a class="main_menu" href="157551-Events.html">Events</a></li>
+<li class="page_157552" id="pageListElement_157552"><a class="main_menu" href="157552-Virtueller-Rundgang.html">Virtueller Rundgang</a></li>
+<li class="page_157542" id="pageListElement_157542"><a class="main_menu" href="157542-Anfahrt.html">Anfahrt</a></li>
+<li class="page_157544" id="pageListElement_157544"><a class="main_menu" href="157544-Reservierung.html">Reservierung</a></li>
+</ul>
+
+  </div>
+  </div>
+  <br style="clear:both" /><!-- PRELOADER -->
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+
+<!-- SCROLL UP -->
+<a href="#" class="scrollup" style="display: none;"> </a>
+
+<!-- HEADER & LOGO & MENU -->
+<header class="header">
+      <div class="top-bar">
+        <div class="logo-container small-12 columns text-center">
+          <a href="../index.html"><img src="../files/1902298/style/img/logo.jpg" alt="Restaurant Caspari GmbH"></a>
+        </div>
+        <div class="navi small-12 columns">
+            <div class="nav"></div>
+        </div>
+      </div>
+</header>
+
+<!-- SLIDESHOW -->
+<div class="slideshow_container hide-for-small-only">
+  <div class="slider_content">
+     <span class="glf-button takeaway" data-glf-cuid="ce4c58c5-6f70-4b1f-a379-807c289d00f6" data-glf-ruid="aff18db6-0739-4bfb-ad11-a47979d73d44" >MENÜ ansehen & bestellen</span>
+  </div>
+  <div class="social-media">
+    <a href="https://www.facebook.com/Restaurant-Caspari-111147576258839/" target="_blank"><img class="icon" src="../files/1902298/style/img/icon_facebook.png" alt="Facebook Icon"></a>
+    <a href="https://www.instagram.com/restaurant_caspari/" target="_blank"><img class="icon" src="../files/1902298/style/img/icon_instagram.png" alt="Instagram Icon"></a>
+  </div>
+</div>
+
+<!-- STARTBILD FÜR SMARTPHONE - wird per css eingebunden -->
+<div class="mobilstart_img">
+    <div class="mobilstart_img_inner">
+    </div>
+    <div class="slider_content">
+      <span class="glf-button takeaway" data-glf-cuid="ce4c58c5-6f70-4b1f-a379-807c289d00f6" data-glf-ruid="aff18db6-0739-4bfb-ad11-a47979d73d44" > TAKE-AWAY-MENÜ ansehen & bestellen</span>
+    </div>
+    <div class="social-media">
+        <a href="https://www.facebook.com/Restaurant-Caspari-111147576258839/" target="_blank"><img class="icon" src="../files/1902298/style/img/icon_facebook.png" alt="Facebook Icon"></a>
+        <a href="https://www.instagram.com/restaurant_caspari/" target="_blank"><img class="icon" src="../files/1902298/style/img/icon_instagram.png" alt="Instagram Icon"></a>
+  </div>
+</div>
+
+<!-- CONTENT INNER FOOTER -->
+<div class="content_inner_footer" id="destroy">
+  <div class="row">
+    <div class="small-12 medium-12 large-5 columns column-block">
+        <p class="title-foot">Öffnungszeiten</p>
+        <div class="row">
+            <div class="small-6 columns">
+                <p>Mo-Do</p>
+            </div>
+            <div class="small-6 columns">
+                <p>12:00 - 23:00 Uhr</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-6 columns">
+                <p>Fr-Sa</p>
+            </div>
+            <div class="small-6 columns">
+                <p>12:00 - 00:00 Uhr</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-6 columns">
+                <p>So & Feiertage</p>
+            </div>
+            <div class="small-6 columns">
+                <p>12:00 - 22:00 Uhr</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-6 columns">
+                <p>&nbsp;</p>
+            </div>
+            <div class="small-6 columns">
+                <p>Warme Küche bis 21:00 Uhr</p>
+            </div>
+        </div>
+    </div>
+    <div class="small-12 medium-6 large-4 columns">
+      <p class="title-foot">Anfahrt & Kontakt</p>
+      <div class="row">
+          <div class="small-12 medium-6 columns">
+                <p>Kirchenstrasse 6<br>21244 Buchholz</p>
+          </div>
+          <div class="small-12 medium-6 columns">
+                <p><a href="tel:0418197374">04181 97374</a><br><a href="mailto:info@restaurant-caspari.de">info@restaurant-caspari.de</a></p>
+          </div>
+      </div>
+    </div>
+    <div class="small-12 medium-4 large-2 columns">
+      <p class="title-foot">Links</p>
+      <a href="157549-Speisekarte.html">Speisekarte</a><br>
+      <a href="157544-Reservierung.html">Kontakt</a><br>
+      <a href="157545-Impressum.html">Impressum</a><br>
+      <a href="157554-Datenschutz.html">Datenschutz</a><br>
+    </div>
+    <div class="small-12 medium-2 large-1 columns text-right">
+      <a href="https://www.facebook.com/Restaurant-Caspari-111147576258839/" target="_blank"><img class="social" src="../files/1902298/style/img/icon_facebook.png" alt="Facebook Icon"></a>
+      <a href="https://www.instagram.com/restaurant_caspari/" target="_blank"><img class="social" src="../files/1902298/style/img/icon_instagram.png" alt="Instagram Icon"></a>
+    </div>
+  </div>
+  <div class="fullWidth">
+    <div class="row">
+      <div class="small-12 columns siteCreated text-center">
+        site created and hosted by <a href="http://www.nordicweb.com/" target="_blank" title="webdesign">nordicweb</a>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="site_foot"></div><div id="slideshow">
+  <div class="picture" id="slideshow_0"><img src="../files/1902298/slideshow/60987.jpg" alt="" /></div>
+</div>
+
+<script type="text/javascript" src="../files/1902298/style/js/slideshow.js"></script>
+<script type="text/javascript" src="../files/1902298/slideshow/config.js"></script>	
+  </div>
+  </div>
+  </div>
+  
+  <div class="foot">
+  <div class="foot_inner">
+  <script src="../2.2.4/jquery.min.js"></script>
+<script src="../files/1902298/style/js/nw.js"></script>
+<script src="../files/1902298/style/js/imagelightbox.min.js"></script>
+<script src="../files/1902298/style/js/modernizr.js"></script>
+<script src="../files/1902298/style/js/foundation.js"></script>
+<script src="../files/1902298/style/js/jquery.plusanchor.js"></script>
+<script src="../aaa-cookie/jquery.cookie.js"></script>
+<script src="https://www.fbgcdn.com/embedder/js/ewm2.js"defer async ></script>
+
+<script>
+    var jq = $.noConflict(true);
+    jq(document).ready(function(){
+    jq.removeCookie('CAKEPHP', { path: '/' });
+
+        var siteInner = jq(".site_inner");
+        var header = jq(".header");
+        var logoContainer = jq(".logo_container");
+        var menu = jq(".menu");
+        var nav = jq(".nav");
+        var topBar = jq(".top-bar");
+        var slideshowContainer = jq(".slideshow_container");
+        var slideshow = jq("#slideshow");
+        var contSec = jq("#content_sec");
+        var cont = jq(".content");
+        var contInner = jq(".content_inner");        
+        var contentInnerFooter = jq(".content_inner_footer");
+        var mobilstartImg = jq(".mobilstart_img");
+
+        siteInner.prepend(slideshowContainer);
+        siteInner.prepend(logoContainer);
+        siteInner.prepend(menu);
+        siteInner.prepend(header);
+        cont.prepend(mobilstartImg);
+
+        slideshowContainer.append(slideshow);
+
+        siteInner.append(contentInnerFooter);
+
+        nav.append(menu);
+
+        // funktion zum hinzufügen (umschliessen) von "FullWidth backgrounds" an das gewuenschte element
+        var addFullwidthBg = function(divElement, backgroundType){
+            jq(divElement).wrap('<div class="'+ backgroundType +'"></div>');
+        };
+
+        addFullwidthBg(".slideshow_container", 'full-width-slideshow-bg');
+
+        //offcanvas function
+        siteInner.wrap("<div class='off-canvas-wrapper'><div class='off-canvas-wrapper-inner' data-off-canvas-wrapper><div class='off-canvas-content' data-off-canvas-content>");
+        jq(".off-canvas-wrapper-inner").prepend("<div class='off-canvas position-right' id='offCanvas' data-position='right' data-off-canvas></div>");
+        // Function für das Wort 'Menü'
+        // nav.prepend("<a class='menu-toggle' data-toggle='offCanvas' href='#'>Menü</a>");
+        // Function für das Hamburger Menü
+        nav.prepend("<a class='menu-toggle menu-icon' data-toggle='offCanvas' href='#'><span></span></a>");
+        siteInner.append('<a class="exit-off-canvas"></a>');
+        
+        //offcanvas clone für die Menüfunktionalität
+        var rightCanvasMenu = jq("#offCanvas");
+        jq(".menu_inner").clone().prependTo(rightCanvasMenu);
+
+        // Offcanvas SubNavi
+        // hide sub nav
+        if(true) {
+            // allow expandable sub nav(s)
+            if(true){
+                jq('#offCanvas ul.sub_menu').each(function() {
+                    if(jq(this).children().length){
+                        jq(this,'li:first').parent().prepend('<a href="#" class="tog"> + </a>');
+                    }
+                });
+                jq('#offCanvas ul.subsub_menu').each(function() {
+                    if(jq(this).children().length){
+                        jq(this,'li:first').parent().prepend('<a href="#" class="sub-tog"> + </a>');
+                    }
+                });
+                jq('#offCanvas .tog, #offCanvas .sub-tog').on("click",function(e){
+                    e.preventDefault();
+                    if (jq(this).hasClass("tog-clicked")) {
+                        jq(this).text('+');
+                        jq(this).next().next('ul').slideUp(300, function(){});
+                    } 
+                    else {
+                        jq(this).text('-');
+                        jq(this).next().next('ul').slideDown(300, function(){});
+                    }
+                    jq(this).toggleClass("tog-clicked");
+                });
+            } 
+            else {
+                jq('ul.sub_menu, ul.subsub_menu').show();
+            }
+        } 
+        else {
+            jq('ul.sub_menu, ul.subsub_menu').hide();
+        }
+
+        // Fade in and out Menu
+        jq('.menu li').hover(function() {
+            jq(this).children('ul').stop(true, false, true).slideToggle(300);
+        });
+
+
+        // Nav Arrow
+        jq('.menu ul.subsub_menu').each(function() {
+            if(jq(this).children().length){
+                jq(this,'li:first').parent().addClass('nav-arrow');
+            }
+        });
+
+
+        // Lightbox
+
+        jq('.pictures').addClass('row small-up-2 medium-up-3 large-up-4');
+        jq('.pictures li').addClass('column effect');
+        jq('.pictures li a').wrap('<div class="back-wrap"><div class="img-wrapper">');
+
+        jq('.pictures li a').each(function() {
+            jq(this).attr('class', 'lightbox').attr('id', 'lightbox');
+            var img = jq(this).css('background-image');
+            var desc = jq(this).attr('title');
+            img = img.replace('url(','').replace(')','').replace(/\"/gi, '');
+
+            jq(this).html('<img src=' + img + ' alt=' + desc + ' />');
+            img = jq(this).attr('style', '');
+        });
+
+        // Disable old Lightbox
+        jq("LINK[href*='lightbox_gallery.css']").remove();
+        jq("SCRIPT[src*='lightbox_gallery.js']").remove();
+
+        // Remove the distance between content and footer
+        jq("br[style*='clear:both']").remove();
+
+
+        // Scroll Top
+        jq(window).scroll(function(){
+            if (jq(this).scrollTop() > 300) {
+                jq('.scrollup').fadeIn();
+            } 
+            else {
+                jq('.scrollup').fadeOut();
+            }
+        });
+ 
+        jq('.scrollup').click(function(){
+            jq("html, body").animate({ scrollTop: 0 }, 500);
+            return false;
+        });
+        
+
+        // Smooth Scrolling
+        jq(document).ready(function(){
+            jq('body').plusAnchor({
+                offsetTop: -50,
+                speed:  700
+            });
+        });
+
+        // jQuery PreLoad
+	    jq(window).on('load', function() { // makes sure the whole site is loaded 
+	      jq('#status').fadeOut(); // will first fade out the loading animation 
+	      jq('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+	      jq('body').delay(350).css({'overflow':'visible'});
+	    }) 
+            
+        jq(document).foundation();
+
+    });
+</script>
+  <br style="clear:both" />
+  
+  <div class="siteCreated">site created and hosted by <a href="http://www.nordicweb.com/" target="_blank" title="webdesign">nordicweb</a></div>
+  
+  </div>
+  <script type="text/javascript">
+//<![CDATA[
+if(typeof(LightboxOptions)!="undefined"){LightboxOptions.labelOf = "von";LightboxOptions.labelImage = "Bild";}
+//]]>
+</script>
+  </div>
+  	
+  </body>
+  
+<!-- Mirrored from restaurant-caspari.de/de/157554-Datenschutz by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 05 May 2025 17:07:31 GMT -->
+</html>
