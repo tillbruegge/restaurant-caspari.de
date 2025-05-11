@@ -1,23 +1,10 @@
 content:
-  - name: subsites
-    label: HTML Subsites
+  - name: pages
+    label: HTML Pages
     type: collection
-    path: "de"  # Targets your /de directory
-    view:
-      fields: [title, section, content]
+    path: "de/*.html"  # Targets your German subsites
     fields:
-      - name: title
-        label: Page Title
-        type: string
+      - name: body
+        label: Page Content
+        type: rich-text
         required: true
-        
-      - name: section
-        label: Content Section
-        type: string
-        list: true
-        options: [about, menu, contact]  # Customize sections
-        
-      - name: content
-        label: HTML Content
-        type: rich-text  # or 'code' for raw HTML editing
-        description: Edit main content area
