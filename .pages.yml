@@ -1,14 +1,5 @@
-content:
-  - name: htmlpages
-    label: "HTML Pages"
-    type: collection
-    path: "restaurant-caspari.de/de"
-    format: code                           # use the “code” editor [2]
-    subfolders: false
-    fields:
-      - name: content
-        label: "HTML source"
-        type: code
-        parser: html                       # tells Pages CMS to treat this as HTML [2]
-        options:
-          language: html                   # editor syntax highlighting
+branch: main                    # the branch you want Pages CMS to watch
+base_url: https://restaurant-caspari.de
+paths:
+  '/de':                        # URL prefix
+    - 'de/**/*.html'            # all HTML files under the de/ directory
