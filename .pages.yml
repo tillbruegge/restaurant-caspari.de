@@ -4,7 +4,7 @@ content:
   - name: "htmlpages"
     label: "HTML Pages"
     type: "collection"
-    path: "restaurant-caspari.de/de/*.html"
+    path: "*.html"
     format: "code"  # This is crucial for HTML files
     view:
       primary: "body"
