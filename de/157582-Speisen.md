@@ -451,7 +451,7 @@ var siteId = 1902298;
 <hr />
 <p>&nbsp;</p>
 <h2>Dessert</h2>
-<p><strong>Gebackene Apfelringe</strong> mit Zimt<br />In einer Amaretto-Vanillesauce<br /><span class="preis">8,90 &euro;</span></p>
+<p><strong>Gebackene Apfelringe</strong> mit feinstem Zimt<br />In einer Amaretto-Vanillesauce<br /><span class="preis">8,90 &euro;</span></p>
 <p><strong>Apfelstrudel</strong><br />Mit Vanille-Sauce oder Vanilleeis<br /><span class="preis">7,90 &euro;</span></p>
 <p>&nbsp;</p>
 <p><span class="preis">Pfannkuchen</span></p>
