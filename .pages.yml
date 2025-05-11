@@ -1,16 +1,15 @@
 media: "files"  # Adjust to your media folder location
 
 content:
-  - name: "mainpages"
-    label: "Main Pages"
+  - name: "htmlpages"
+    label: "HTML Pages"
     type: "collection"
     path: "restaurant-caspari.de/de/*.html"
-      # Fields configuration as above
-
-  - name: "subpages"
-    label: "Sub Pages"
-    type: "collection"
-    path: "restaurant-caspari.de/de/*/*.html"  # For HTML files in subdirectories
+    format: "code"  # This is crucial for HTML files
     fields:
-      # Fields configuration
+      - name: "body"
+        label: "Content"
+        type: "code"
+        format: "html"
+
 
