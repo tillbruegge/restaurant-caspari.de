@@ -1,5 +1,4 @@
-media:
-  folder: "files"  # Adjust to your media folder location
+media: "files"  # Adjust to your media folder location
 
 content:
   - name: "pages"
