@@ -5,7 +5,6 @@ content:
     label: "Main Pages"
     type: "collection"
     path: "restaurant-caspari.de/de/*.html"
-    fields: ["title", "filename"]
       # Fields configuration as above
 
   - name: "subpages"
