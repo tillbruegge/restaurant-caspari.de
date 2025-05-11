@@ -2,6 +2,13 @@ content:
   - name: htmlpages
     label: "HTML Pages"
     type: collection
-    path: "restaurant-caspari.de/de"      # point at the folder, not a glob [2]
-    format: raw                            # use the “raw” editor for the entire file [2]
-    subfolders: false                      # don’t recurse into subfolders (optional)
+    path: "restaurant-caspari.de/de"
+    format: code                           # use the “code” editor [2]
+    subfolders: false
+    fields:
+      - name: content
+        label: "HTML source"
+        type: code
+        parser: html                       # tells Pages CMS to treat this as HTML [2]
+        options:
+          language: html                   # editor syntax highlighting
