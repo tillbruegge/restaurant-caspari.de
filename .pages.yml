@@ -1,12 +1,12 @@
-media: "files"  # Adjust to your media folder location
-
+media: "files"
 content:
   - name: "htmlpages"
     label: "HTML Pages"
     type: "collection"
     path: "restaurant-caspari.de/de/*.html"
     format: "code"  # This is crucial for HTML files
-
-
-
-
+    fields:
+      - name: "body"
+        label: "Content"
+        type: "code"
+        format: "html"
