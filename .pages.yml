@@ -1,38 +1,16 @@
-# .pages.yml
-
-# Optional: Configure the media folder if your HTML files reference images or other assets.
-# Replace "img" with the actual path to your media assets folder (e.g., "files", "assets/images").
 media:
-   path: files # This is the folder where Pages CMS will look for and save media files.
+  folder: "files"  # Adjust to your media folder location
 
 content:
-  # Configuration for the HTML files inside the 'de' folder
-  - name: restaurant_caspari # A unique machine-friendly name for this content type
-    label: "Restaurant Caspari" # A user-friendly label that will appear in the Pages CMS interface
-    type: collection      # Indicates that this content type consists of multiple files
-    path: "de"            # The path to the folder containing your HTML files (e.g., Anfahrt.html, Reservierung.html)
-    fields:               # Defines the editable parts of your HTML files
-      # If your HTML files have a <title> tag or you want to manage a title separately
-      # you might need to ensure your HTML files can store/use this, possibly via frontmatter
-      # or a script that injects it. For simplicity, this example focuses on body content.
-      # - name: page_title
-      #   label: "Page Title"
-      #   type: string
-
-      - name: body # A name for the main content field
-        label: "Page Content" # Label for this field in the CMS
-        type: code            # Use 'code' type for editing raw HTML content [5]
-        options:
-          format: html        # Specifies that the content being edited is HTML [5]
-
-  # Optional: Configuration to make your main index.html editable
-  # - name: homepage
-  #   label: "Homepage"
-  #   type: single          # Indicates this is a single, unique file
-  #   path: "index.html"    # Path to your main homepage file
-  #   fields:
-  #     - name: body
-  #       label: "Page Content"
-  #       type: code
-  #       options:
-  #         format: html
+  - name: "pages"
+    label: "HTML Pages"
+    type: "collection"
+    path: "restaurant-caspari.de/de"  # Path to your HTML files
+    fields:
+      - name: "title"
+        label: "Page Title"
+        type: "string"
+      - name: "body"
+        label: "Page Content"
+        type: "code"
+        format: "html"  # Specifying HTML format
