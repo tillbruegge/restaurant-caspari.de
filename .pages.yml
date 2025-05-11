@@ -4,5 +4,5 @@ content:
     label: "HTML Pages"
     type: collection
     path: "de"
-    format: raw
+    format: "raw"
     extensions: ["html"]
