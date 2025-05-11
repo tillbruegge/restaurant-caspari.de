@@ -7,7 +7,7 @@ media:
 
 content:
   # Configuration for the HTML files inside the 'de' folder
-  - name: Rerestaurant_caspari # A unique machine-friendly name for this content type
+  - name: restaurant_caspari # A unique machine-friendly name for this content type
     label: "Restaurant Caspari" # A user-friendly label that will appear in the Pages CMS interface
     type: collection      # Indicates that this content type consists of multiple files
     path: "de"            # The path to the folder containing your HTML files (e.g., Anfahrt.html, Reservierung.html)
