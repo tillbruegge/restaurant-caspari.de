@@ -8,6 +8,6 @@ content:
     fields:
       - name: "body"
         label: "Content"
-        type: "markdown"  # Try changing from "code" to "markdown"
+        type: "code"  # Try changing from "code" to "markdown"
         parser: "html"    # Explicitly set parser for this field
 
