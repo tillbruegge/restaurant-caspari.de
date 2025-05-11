@@ -2,13 +2,7 @@ content:
   - name: htmlpages
     label: "HTML Pages"
     type: collection
-    path: "restaurant-caspari.de/de"
-    format: code                       # code editor
-    subfolders: false
-    fields:
-      - name: content
-        label: "HTML Source"
-        type: code
-        parser: html                   # tells Pages CMS this is HTML
-        options:
-          language: html
+    path: "de"                       # folder in your repo
+    format: raw                      # or "code" if you want syntax highlighting
+    subfolders: false                # only this folder
+    file_extensions: ["html"]        # MUST include html or none of your .html files will appear
