@@ -1,5 +1,23 @@
-branch: main                    # the branch you want Pages CMS to watch
-base_url: https://restaurant-caspari.de
-paths:
-  '/de':                        # URL prefix
-    - 'de/**/*.html'            # all HTML files under the de/ directory
+content:
+  - name: subsites
+    label: HTML Subsites
+    type: collection
+    path: "de"  # Targets your /de directory
+    view:
+      fields: [title, section, content]
+    fields:
+      - name: title
+        label: Page Title
+        type: string
+        required: true
+        
+      - name: section
+        label: Content Section
+        type: string
+        list: true
+        options: [about, menu, contact]  # Customize sections
+        
+      - name: content
+        label: HTML Content
+        type: rich-text  # or 'code' for raw HTML editing
+        description: Edit main content area
