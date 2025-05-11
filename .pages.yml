@@ -1,13 +1,11 @@
 media: "files"
 content:
-  - name: "htmlpages"
+  - name: "pages"
     label: "HTML Pages"
-    type: "collection"
-    path: "restaurant-caspari.de/de/*.html"
-    parser: "html"  # Specify the parser explicitly
+    path: "restaurant-caspari.de/de"
+    pattern: "**/*.html"  # Use pattern instead of path with glob
     fields:
-      - name: "body"
-        label: "Content"
-        type: "code"  # Try changing from "code" to "markdown"
-        parser: "html"    # Explicitly set parser for this field
+      - name: "content"
+        label: "Page Content"
+        type: "html"      # Use simple "html" type instead of "code"
 
