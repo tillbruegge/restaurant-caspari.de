@@ -6,10 +6,9 @@ content:
     type: "collection"
     path: "restaurant-caspari.de/de/*.html"
     format: "code"  # This is crucial for HTML files
-    fields:
-      - name: "body"
-        label: "Content"
-        type: "code"
-        format: "html"
+    view:
+      primary: "body"
+      fields: ["body"]
+
 
 
