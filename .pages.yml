@@ -2,10 +2,12 @@ media: "files"
 content:
   - name: "htmlpages"
     label: "HTML Pages"
+    type: "collection"
     path: "restaurant-caspari.de/de/*.html"
-    format: "code"  # This is crucial for HTML files
+    parser: "html"  # Specify the parser explicitly
     fields:
       - name: "body"
         label: "Content"
-        type: "code"
-        format: "html"
+        type: "markdown"  # Try changing from "code" to "markdown"
+        parser: "html"    # Explicitly set parser for this field
+
