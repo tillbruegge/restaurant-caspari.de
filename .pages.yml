@@ -1,10 +1,37 @@
+# .pages.yml
+branch: main
+base_url: https://restaurant-caspari.de
+
+paths:
+  '/':
+    - '*.html'
+  '/de':
+    - 'de/**/*.html'
+
 content:
-  - name: pages
-    label: HTML Pages
+  - name: germanPages
+    label: Deutsche Seiten
     type: collection
-    path: "de/*.html"  # Targets your German subsites
+    path: de
+    format: raw
     fields:
-      - name: body
-        label: Page Content
-        type: rich-text
-        required: true
+      - name: title
+        label: Überschrift
+        type: code
+        selector: 'h1'
+      - name: address
+        label: Anschrift
+        type: code
+        selector: '.column-block p:nth-of-type(1)'
+      - name: contact
+        label: Kontakt
+        type: code
+        selector: '.column-block p:nth-of-type(2)'
+      - name: mapNotice
+        label: Karten-Hinweis
+        type: code
+        selector: '#texter'
+      - name: mapEmbed
+        label: Karte einbetten
+        type: code
+        selector: '#karte'
